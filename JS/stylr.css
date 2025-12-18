@@ -366,3 +366,86 @@ footer .container {
 .mb-lg {
     margin-bottom: var(--spacing-lg);
 }
+/* =========================
+   Dark mode theme
+   ========================= */
+
+   body.dark-mode {
+    --color-primary: #020617;   /* very dark navy for header/footer */
+    --color-secondary: #60a5fa; /* brighter blue */
+    --color-accent: #f97373;
+    --color-text: #e5e7eb;
+    --color-text-light: #9ca3af;
+    --color-bg: #020617;        /* page background */
+    --color-bg-alt: #111827;
+    --color-border: #1f2937;
+}
+
+body.dark-mode body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Make cards and sections look good in dark mode */
+body.dark-mode .card {
+    background-color: var(--color-bg-alt);
+}
+
+/* =========================
+   Dark mode toggle button
+   ========================= */
+
+.theme-toggle {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    width: 3rem;
+    height: 1.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: #e5e7eb;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0.15rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 0; /* hide emoji text; we’ll show via ::before */
+    z-index: 100;
+}
+
+.theme-toggle::before {
+    content: '🌙';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background-color: #111827;
+    color: #facc15;
+    font-size: 0.8rem;
+    transform: translateX(0);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* When dark mode is active, slide the knob and change icon */
+body.dark-mode .theme-toggle {
+    background: #0b1120;
+    border-color: rgba(148, 163, 184, 0.7);
+    justify-content: flex-end;
+}
+
+body.dark-mode .theme-toggle::before {
+    content: '☀️';
+    background-color: #facc15;
+    color: #0b1120;
+}
+
+/* Slightly adjust position on larger screens */
+@media (min-width: 768px) {
+    .theme-toggle {
+        top: 1rem;
+        right: 2rem;
+    }
+}

@@ -105,4 +105,33 @@ document.addEventListener('DOMContentLoaded', function () {
             el.style.transform = 'none';
         });
     }
+
+    /* =========================
+       Dark mode toggle
+       ========================= */
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+
+    if (themeToggle) {
+        // Apply saved theme if it exists
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.setAttribute('aria-pressed', 'true');
+        } else {
+            themeToggle.setAttribute('aria-pressed', 'false');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = !body.classList.contains('dark-mode');
+            if (isDark) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+            themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+        });
+    }
 });
