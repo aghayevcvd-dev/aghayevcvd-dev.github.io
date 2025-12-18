@@ -3,57 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — Personal Website</title>
+    <title>Home – Personal Website</title>
     <link rel="stylesheet" href="JS/stylr.css">
 </head>
 <body>
-    <header>
-        <h1>Personal Website</h1>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="navbar">
+                <a href="index.html" class="nav-brand">[YOUR NAME]</a>
+
+                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+                    ☰ Menu
+                </button>
+
+                <nav class="site-nav">
+                    <ul id="primary-nav" class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" aria-current="page">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
     <main id="main">
-        <h1>About Me</h1>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Hi, I'm [YOUR NAME]</h1>
+                    <p>[SHORT BIO – e.g., “An aspiring web developer passionate about building clean, accessible, and responsive websites.”]</p>
 
-        <section>
-            <h2>Background</h2>
-            <p>Placeholder content for background information. Share your professional journey, where you're from, and what drives you.</p>
-        </section>
+                    <div class="mt-lg">
+                        <a href="projects.html" class="button button--primary">View Projects</a>
+                        <a href="mailto:[YOUR_EMAIL]" class="button button--secondary">Contact Me</a>
+                    </div>
+                </div>
 
-        <section>
-            <h2>Qualifications</h2>
-            <p>Placeholder content for qualifications. Include degrees, certifications, and relevant training.</p>
-        </section>
-
-        <section>
-            <h2>Activities</h2>
-            <h3>Course Activities</h3>
-            <p>Placeholder content for course-related activities and projects.</p>
-            <h3>Non-Course Activities</h3>
-            <p>Placeholder content for personal projects, volunteer work, and hobbies.</p>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Skill one</li>
-                <li>Skill two</li>
-                <li>Skill three</li>
-                <li>Skill four</li>
-                <li>Skill five</li>
-            </ul>
+                <div class="hero-image">
+                    <img src="images/profile.jpg" alt="Profile photo of [YOUR NAME]">
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Personal Website. All rights reserved.</p>
+        <div class="container">
+            <ul class="footer-links">
+                <li>
+                    <a href="[GITHUB_PROFILE_URL]" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true">🐙</span> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="[CODECADEMY_PROFILE_URL]" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true">📘</span> Codecademy
+                    </a>
+                </li>
+                <li>
+                    <a href="[WEBSITE_REPO_URL]" target="_blank" rel="noopener noreferrer">
+                        Website Repository
+                    </a>
+                </li>
+            </ul>
+
+            <p class="footer-text">
+                &copy; 2024 [YOUR NAME]. All rights reserved.
+            </p>
+        </div>
     </footer>
 
     <script src="JS/ani.js"></script>
