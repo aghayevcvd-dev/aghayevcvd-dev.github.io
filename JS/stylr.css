@@ -370,15 +370,31 @@ footer .container {
    Dark mode theme
    ========================= */
 
-   body.dark-mode {
-    --color-primary: #020617;   /* very dark navy for header/footer */
-    --color-secondary: #60a5fa; /* brighter blue */
-    --color-accent: #f97373;
-    --color-text: #e5e7eb;
-    --color-text-light: #9ca3af;
-    --color-bg: #020617;        /* page background */
-    --color-bg-alt: #111827;
-    --color-border: #1f2937;
+   /* =========================
+   Dark mode theme (yellow accents)
+   ========================= */
+
+body.dark-mode {
+    /* Keep a light background and black text */
+    --color-primary: #b7ac13;      /* header/footer background */
+    --color-secondary: #facc15;    /* was blue, now yellow */
+    --color-accent: #f97373;       /* you can keep this or tweak */
+    --color-text: #ffffff;         /* main text: black */
+    --color-text-light: #ffffff;   /* secondary text: dark gray */
+    --color-bg: #000000;           /* page background: white */
+    --color-bg-alt: #51074c;       /* cards/sections background */
+    --color-border: #ffa600;
+}
+
+/* Ensure the body uses those colors when dark-mode is on */
+body.dark-mode {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* Make cards and sections look good in this mode */
+body.dark-mode .card {
+    background-color: var(--color-bg-alt);
 }
 
 body.dark-mode body {
