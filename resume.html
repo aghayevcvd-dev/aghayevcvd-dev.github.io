@@ -3,97 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume – Personal Website</title>
+    <title>Resume</title>
     <link rel="stylesheet" href="JS/stylr.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
-
-    <header class="site-header">
-        <div class="container">
-            <div class="navbar">
-                <a href="index.html" class="nav-brand">[YOUR NAME]</a>
-
-                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-                    ☰ Menu
-                </button>
-
-                <nav class="site-nav">
-                    <ul id="primary-nav" class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resume.html" aria-current="page">Resume</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main id="main">
-        <div class="container">
-            <h1>Resume</h1>
+    <main>
+        <h1>Resume</h1>
 
-            <section id="education">
-                <h2>Education</h2>
-                <p>
-                    [Add your degrees, institutions, and graduation dates here.]
-                </p>
-            </section>
+        <section id="education">
+            <h2>Education</h2>
+            <p>Placeholder for education content. Add your degrees, institutions, and graduation dates here.</p>
+        </section>
 
-            <section id="experience">
-                <h2>Experience</h2>
-                <p>
-                    [Add job titles, companies, dates, and short descriptions of your responsibilities.]
-                </p>
-            </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <p>Placeholder for work experience. Add your job titles, companies, dates, and descriptions here.</p>
+        </section>
 
-            <section id="skills">
-                <h2>Skills</h2>
-                <p>
-                    [Summarize your technical and soft skills.]
-                </p>
-            </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>Placeholder for skills. Add your technical and professional skills here.</p>
+        </section>
 
-            <section id="certifications">
-                <h2>Certifications</h2>
-                <p>
-                    [Add relevant certifications and credentials here.]
-                </p>
-            </section>
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <p>Placeholder for certifications. Add relevant certifications and credentials here.</p>
+        </section>
 
-            <!-- Optional: link to a PDF resume if you have one -->
-            <!-- Make sure the path is correct if you add the file -->
-            <div class="mt-lg">
-                <a href="assets/resume.pdf">Download Resume (PDF)</a>
-            </div>
+        <div id="download">
+            <a href="assets/resume.pdf">Download Resume (PDF)</a>
         </div>
     </main>
 
     <footer>
-        <div class="container">
-            <ul class="footer-links">
-                <li>
-                    <a href="[GITHUB_PROFILE_URL]" target="_blank" rel="noopener noreferrer">
-                        <span aria-hidden="true">🐙</span> GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="[CODECADEMY_PROFILE_URL]" target="_blank" rel="noopener noreferrer">
-                        <span aria-hidden="true">📘</span> Codecademy
-                    </a>
-                </li>
-                <li>
-                    <a href="[WEBSITE_REPO_URL]" target="_blank" rel="noopener noreferrer">
-                        Website Repository
-                    </a>
-                </li>
-            </ul>
-
-            <p class="footer-text">
-                &copy; 2024 [YOUR NAME]. All rights reserved.
-            </p>
-        </div>
+        <p>&copy; 2024 Personal Website. All rights reserved.</p>
     </footer>
 
     <script src="JS/ani.js"></script>

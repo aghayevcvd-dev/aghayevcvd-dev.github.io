@@ -3,103 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About – Personal Website</title>
-    <link rel="stylesheet" href="JS/stylr.css">
+    <title>Home - Personal Website</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to main content</a>
-
     <header class="site-header">
         <div class="container">
-            <div class="navbar">
-                <a href="index.html" class="nav-brand">[YOUR NAME]</a>
-
-                <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-                    ☰ Menu
-                </button>
-
-                <nav class="site-nav">
-                    <ul id="primary-nav" class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+            <nav class="site-nav">
+                <ul id="primary-nav" class="nav-list">
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <main id="main">
-        <div class="container">
-            <h1>About Me</h1>
-
-            <section>
-                <h2>Background</h2>
-                <p>
-                    [Add your background: where you are from, what you study, and what interests you in technology/computing.]
-                </p>
-            </section>
-
-            <section>
-                <h2>Qualifications</h2>
-                <p>
-                    [List your degrees, certifications, or relevant courses. You can include this course here.]
-                </p>
-            </section>
-
-            <section>
-                <h2>Activities</h2>
-                <h3>Course Activities</h3>
-                <p>
-                    [Describe activities, labs, or projects you have done in this course.]
-                </p>
-
-                <h3>Non‑Course Activities</h3>
-                <p>
-                    [Describe other projects, volunteering, clubs, or hobbies.]
-                </p>
-            </section>
-
-            <section>
-                <h2>Skills</h2>
-                <ul>
-                    <li>[Skill one]</li>
-                    <li>[Skill two]</li>
-                    <li>[Skill three]</li>
-                    <li>[Skill four]</li>
-                    <li>[Skill five]</li>
-                </ul>
-            </section>
-        </div>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <img src="assets/images/profile-placeholder.jpg" alt="Profile photo">
+                <h1>Hi, I'm [YOUR NAME]</h1>
+                <p>[SHORT BIO]</p>
+                <div class="cta-links">
+                    <a href="projects.html" class="btn">View Projects</a>
+                    <a href="mailto:[YOUR_EMAIL]" class="btn">Contact</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <ul class="footer-links">
-                <li>
-                    <a href="[GITHUB_PROFILE_URL]" target="_blank" rel="noopener noreferrer">
-                        <span aria-hidden="true">🐙</span> GitHub
-                    </a>
-                </li>
-                <li>
-                    <a href="[CODECADEMY_PROFILE_URL]" target="_blank" rel="noopener noreferrer">
-                        <span aria-hidden="true">📘</span> Codecademy
-                    </a>
-                </li>
-                <li>
-                    <a href="[WEBSITE_REPO_URL]" target="_blank" rel="noopener noreferrer">
-                        Website Repository
-                    </a>
-                </li>
-            </ul>
-
-            <p class="footer-text">
-                &copy; 2024 [YOUR NAME]. All rights reserved.
-            </p>
+            <div class="social-links">
+                <a href="[GITHUB_PROFILE_URL]">GitHub</a>
+                <a href="[CODECADEMY_PROFILE_URL]">Codecademy</a>
+            </div>
+            <a href="[WEBSITE_REPO_URL]">Website Repository</a>
+            <p>&copy; 2024 [YOUR NAME]. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="JS/ani.js"></script>
+    <script defer src="assets/js/main.js"></script>
 </body>
 </html>
