@@ -1,58 +1,368 @@
-@import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Mystery+Quest&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=BBH+Bogle&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Mystery+Quest&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 :root {
-    --base-color: #ffffff;
-    --text-color: #000000;
-    --primary-color: #2a3ddf;
-    --secondary-color: #223211;
-    --color-1: #333333;
-    --color-1: #999999;
-    --color-1: #111111;
+    --color-primary: #2c3e50;
+    --color-secondary: #3498db;
+    --color-accent: #e74c3c;
+    --color-text: #333;
+    --color-text-light: #666;
+    --color-bg: #fff;
+    --color-bg-alt: #f5f5f5;
+    --color-border: #ddd;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 0.875rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    
+    --transition: all 0.3s ease;
+    --max-width: 1200px;
 }
-*{
-    margin: 0;
-    padding: 0;
+
+* {
     box-sizing: border-box;
 }
+
 html {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
-    color: var(--text-color);
+    scroll-behavior: smooth;
 }
 
 body {
-    padding: 1em;
-    background-color: var(--base-color);
-
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
-h1, h2, h3 {
-    font-family: Merriweather,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-nav {
-    margin: 1em auto 3em auto;
-    width: min(1000px, 100%);
-}
-nav ul {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    gap: 2em;
-}
-
-nav li:first-child{
-    margin-right: auto;
-    font-family: Merriweather, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-}
-
-nav a {
+a {
+    color: var(--color-secondary);
     text-decoration: none;
-    color: var(--text-color);
+    transition: var(--transition);
 }
 
-nav a:hover {
-    text-decoration: underline;
+a:hover {
+    color: var(--color-accent);
 }
 
+a:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    padding: var(--spacing-sm);
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header & Navbar */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: var(--spacing-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    color: var(--color-bg);
+}
+
+.nav-list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    padding: var(--spacing-md);
+    width: 100%;
+}
+
+.nav-list a {
+    color: var(--color-bg);
+    display: block;
+    padding: var(--spacing-sm) 0;
+}
+
+.nav-list a:hover {
+    color: var(--color-secondary);
+}
+
+header.nav-open .nav-list {
+    display: flex;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    color: var(--color-bg);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.nav-toggle:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* Desktop Navigation */
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-list {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+        gap: var(--spacing-lg);
+        width: auto;
+    }
+
+    .navbar {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.hero-image {
+    order: -1;
+}
+
+.hero-image img {
+    border-radius: 8px;
+}
+
+.hero-content h1 {
+    font-size: var(--font-size-2xl);
+    margin: 0 0 var(--spacing-md) 0;
+    color: var(--color-primary);
+}
+
+.hero-content p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-light);
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-image {
+        order: 0;
+    }
+}
+
+/* Projects Section */
+.projects {
+    padding: var(--spacing-xl) 0;
+}
+
+.projects h2 {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover,
+.card:focus-within {
+    border-color: var(--color-secondary);
+    box-shadow: 0 4px 16px rgba(52, 152, 219, 0.15);
+    transform: translateY(-2px);
+}
+
+.card h3 {
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
+.card p {
+    color: var(--color-text-light);
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 4px;
+    font-size: var(--font-size-base);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.button:focus {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+.button--primary {
+    background-color: var(--color-secondary);
+    color: var(--color-bg);
+}
+
+.button--primary:hover {
+    background-color: #2980b9;
+}
+
+.button--secondary {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.button--secondary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-bg);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-xl);
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--color-bg);
+}
+
+.footer-links a:hover {
+    color: var(--color-secondary);
+}
+
+.footer-text {
+    font-size: var(--font-size-sm);
+    color: #bbb;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
