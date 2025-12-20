@@ -179,16 +179,20 @@ header.nav-open .nav-list {
 .hero {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    gap: 48px;
     align-items: center;
     padding: var(--spacing-xl) 0;
 }
 
 .hero-image {
     order: -1;
+    margin-bottom: 24px;
 }
 
 .hero-image img {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
 }
 
@@ -301,6 +305,10 @@ header.nav-open .nav-list {
     background-color: var(--color-secondary);
     color: var(--color-bg);
 }
+.button--secondary {
+    display: none;
+}
+
 
 /* Footer */
 footer {
